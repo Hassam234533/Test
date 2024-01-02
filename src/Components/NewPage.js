@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const DataComponent = () => {
+
+const NewPage = () => {
+ 
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -12,14 +14,14 @@ const DataComponent = () => {
 
   return (
     <div>
-      <h1>User Data</h1>
+      <h1>New Page</h1>
       <ul>
         {users.map((user) => (
           <li key={user.id}>{user.name}</li>
         ))}
       </ul>
-    </div>
+      </div>
   );
 };
 
-export default DataComponent;
+export default NewPage;

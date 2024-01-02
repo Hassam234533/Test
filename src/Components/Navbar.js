@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className={`navbar navbar-expand-lg navbar-dark bg-dark`}>
       <div className="container-fluid">
         <a className="nav-link active" aria-current="page" href="/">
-        Home
+          Home
         </a>
         <button
           className="navbar-toggler"
@@ -22,10 +22,15 @@ export default function Navbar() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link" href="/About">
-               About
+                About
               </a>
             </li>
           </ul>
+        </div>
+        <div className="container-fluid">
+          <a className="nav-link active" aria-current="page" href="/NewPage">
+            NewPage
+          </a>
         </div>
       </div>
     </nav>
