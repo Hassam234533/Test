@@ -45,3 +45,6 @@ img{
 .accordion-button::after{
   filter: invert(1);
 }
+.img{
+  height: 20px;
+}

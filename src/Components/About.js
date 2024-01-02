@@ -1,42 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from "./Icon";
 
 const About = () => {
-  const [userData, setUserData] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
-      .then((data) => {
-        setUserData(data);
-      });
+      .then((data) => setUsers(data))
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   return (
     <div>
-      <h2>About Page</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          {userData.map((user) => (
-            <tr key={user.id}>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.phone}</td>
-              
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <h1>Only Names Data Show : </h1>
+     <Icon/>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };
-
 export default About;
-

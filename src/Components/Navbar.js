@@ -28,9 +28,8 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="container-fluid">
-{/*         <FontAwesomeIcon icon="fa-regular fa-eye" />
- */}          <a className="nav-link active" aria-current="page" href="/NewPage">
-            NewPage
+          <a className="nav-link active" aria-current="page" href="/NewPage">
+            NewPages
           </a>
         </div>
       </div>
