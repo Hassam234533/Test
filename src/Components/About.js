@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 
 const About = () => {
-  const [users, setUsers] = useState([]);
+  const [userData, setUsers] = useState([]);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -12,15 +12,27 @@ const About = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <h1>Only Names Data Show : </h1>
-    
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
-    </div>
+      <div >
+      <table className="new-page-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {userData.map((user) => (
+            <tr key={user.id}>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+    </>
   );
 };
 export default About;

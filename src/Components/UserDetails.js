@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCross } from '@fortawesome/free-solid-svg-icons';
 
 const UserDetails = () => {
   const [userDetails, setUserDetails] = useState(null);
@@ -25,21 +27,36 @@ const UserDetails = () => {
   }, [id]);
 
   return (
-    <div>
-      <h1>User Details Page</h1>
-      {userDetails && (
-        <div>
-          <h2>{userDetails.name}</h2>
-          <h4>{userDetails.username}</h4>
-          <p>Email: {userDetails.email}</p>
-          <p>Phone Number: {userDetails.phone}</p>
-          <p>Adress:  Street: {userDetails.address.street}, Suite : {userDetails.address.suite}, City :{userDetails.address.city}, ZipCode: {userDetails.address.zipcode}</p>
-          <p>Geo: Lat: {userDetails.address.geo.lat}, Lng: {userDetails.address.geo.lng}</p>
-          <p>Website : {userDetails.website}</p>
-          <p>Company :Company Name: {userDetails.company.name}, CatchPhrase : {userDetails.company.catchPhrase}, Bs: {userDetails.company.bs}</p>
-        </div>
-      )}
-    </div>
+    <>
+      <h1>User All Details: </h1>
+      <div className="new-page-table">
+        {userDetails && (
+          <div>
+            <td>{userDetails.name}</td>
+            <td>{userDetails.username}</td>
+            <td>Email: {userDetails.email}</td>
+            <td>Phone Number: {userDetails.phone}</td>
+            <td>
+              Adress: Street: {userDetails.address.street}, Suite :{" "}
+              {userDetails.address.suite}, City :{userDetails.address.city},
+              ZipCode: {userDetails.address.zipcode}
+            </td>
+            <td>
+              Geo: Lat: {userDetails.address.geo.lat}, Lng:{" "}
+              {userDetails.address.geo.lng}
+            </td>
+            <td>Website : {userDetails.website}</td>
+            <td>
+              Company :Company Name: {userDetails.company.name}, CatchPhrase :{" "}
+              {userDetails.company.catchPhrase}, Bs: {userDetails.company.bs}
+            </td>
+            <Link to="/home">
+            <FontAwesomeIcon icon={faCross} />
+            </Link>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

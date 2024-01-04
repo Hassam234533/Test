@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 const NewPage = () => {
   const [userData, setUserData] = useState([]);
 
@@ -14,7 +15,7 @@ const NewPage = () => {
   return (
     <div>
       <h1>User Data</h1>
-      <table>
+      <table className="new-page-table">
         <thead>
           <tr>
             <th>Name</th>
@@ -30,7 +31,7 @@ const NewPage = () => {
           {userData.map((user) => (
             <tr key={user.id}>
               <td>{user.name}</td>
-              <tb>{user.username}</tb>
+              <td>{user.username}</td>
               <td>{user.email}</td>
               <td>
                 {user.address.street}, {user.address.suite}, {user.address.city}, {user.address.zipcode}
@@ -46,7 +47,7 @@ const NewPage = () => {
           ))}
         </tbody>
       </table>
-    </div>
+    </div>  
   );
 };
 

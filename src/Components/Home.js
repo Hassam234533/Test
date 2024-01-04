@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [userData, setUserData] = useState([]);
@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div>
       <h1>User Data in Home Component</h1>
-      <table>
+      <table className="new-page-table">
         <thead>
           <tr>
             <th>Name</th>
@@ -40,9 +40,10 @@ const Home = () => {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>
-                <a href={`/user/${user.id}`}>
+                <Link to={`/user/${user.id}`}>
                   <FontAwesomeIcon icon={faEye} />
-                </a>
+                </Link>
+                
               </td>
             </tr>
           ))}

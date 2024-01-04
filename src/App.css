@@ -42,9 +42,31 @@
 img {
   width: 690px;
 }
-.accordion-button::after {
-  filter: invert(1);
+body {
+  background-color: pink;
+  color: rgb(35, 6, 68);
 }
-.img {
-  height: 20px;
+
+.new-page-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid rgb(165, 161, 161); 
+}
+
+.new-page-table th,
+.new-page-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.new-page-table th {
+  background-color: #415f74;
+  border: 1px solid rgb(10, 131, 71);
+  font-weight: bold;
+  text-align: left;
+}
+
+.new-page-table td {
+  border: 1px solid rgb(10, 131, 71);
 }

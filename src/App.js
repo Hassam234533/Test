@@ -1,36 +1,32 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import About from "./Components/About";
 import Home from "./Components/Home";
 import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
 import NewPage from "./Components/NewPage";
 import UserDetails from "./Components/UserDetails";
+import ChildtoParentsComponent from "./Components/ChildtoParentsComponents";
 
 const App = () => {
+  const greet = () => {
+    alert("Hello from App!");
+  };
   return (
     <>
       <Header />
       <Navbar />
+      <div>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/NewPage" element={<NewPage />} />
+          <Route path="/user/:id" element={<UserDetails />} />
+        </Routes>
+      </div>
 
-      <Router>
-        <div>
-          <Switch>
-            <Route exact path="/" element={<Home/>}/>
-            
-            <Route path="/about" component={<About/>}/>
-
-            <Route path="/NewPage" component={<NewPage/>}>
-              <NewPage />
-            </Route>
-            <Route path="/user/:id" component={UserDetails} >
-              <UserDetails/>
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-      <Footer />
+      <ChildtoParentsComponent greet={greet} />
     </>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 const Header = () => {
   return (
     <header>
-      <div className="container my-3">
+      <div >
         <h1>React App</h1>
       </div>
     </header>
