@@ -13,21 +13,35 @@ const NewPage = () => {
 
   return (
     <div>
-      <h2>About Page</h2>
+      <h1>User Data</h1>
       <table>
         <thead>
           <tr>
             <th>Name</th>
+            <th>username</th>
             <th>Email</th>
-            <th>Phone</th>
+            <th>Address</th>
+            <th>Geo</th>
+            <th>Website</th>
+            <th>Company</th>
           </tr>
         </thead>
         <tbody>
           {userData.map((user) => (
             <tr key={user.id}>
               <td>{user.name}</td>
+              <tb>{user.username}</tb>
               <td>{user.email}</td>
-              <td>{user.phone}</td>
+              <td>
+                {user.address.street}, {user.address.suite}, {user.address.city}, {user.address.zipcode}
+              </td>
+              <td>
+                Lat: {user.address.geo.lat}, Lng: {user.address.geo.lng}
+              </td>
+              <td>{user.website}</td>
+              <td>
+                {user.company.name}, {user.company.catchPhrase}, {user.company.bs}
+              </td>
             </tr>
           ))}
         </tbody>

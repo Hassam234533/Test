@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import NewPage from "./Components/NewPage";
+import UserDetails from "./Components/UserDetails";
 
 const App = () => {
   return (
@@ -16,19 +17,20 @@ const App = () => {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={Home}>
-              <Home />
-            </Route>
-            <Route path="/about" component={About}>
-              <About />
-            </Route>
-            <Route path="/NewPage" component={NewPage}>
+            <Route exact path="/" element={<Home/>}/>
+            
+            <Route path="/about" component={<About/>}/>
+
+            <Route path="/NewPage" component={<NewPage/>}>
               <NewPage />
+            </Route>
+            <Route path="/user/:id" component={UserDetails} >
+              <UserDetails/>
             </Route>
           </Switch>
         </div>
       </Router>
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -36,15 +36,15 @@
     transform: rotate(360deg);
   }
 }
-.blank{
+.blank {
   color: blue;
 }
-img{
+img {
   width: 690px;
 }
-.accordion-button::after{
+.accordion-button::after {
   filter: invert(1);
 }
-.img{
+.img {
   height: 20px;
 }
