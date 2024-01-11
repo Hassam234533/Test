@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [userData, setUserData] = useState([]);
@@ -9,14 +9,16 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/users"
+        );
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setUserData(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -43,7 +45,6 @@ const Home = () => {
                 <Link to={`/user/${user.id}`}>
                   <FontAwesomeIcon icon={faEye} />
                 </Link>
-                
               </td>
             </tr>
           ))}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const NewPage = () => {
   const [userData, setUserData] = useState([]);
 
@@ -34,20 +33,22 @@ const NewPage = () => {
               <td>{user.username}</td>
               <td>{user.email}</td>
               <td>
-                {user.address.street}, {user.address.suite}, {user.address.city}, {user.address.zipcode}
+                {user.address.street}, {user.address.suite}, {user.address.city}
+                , {user.address.zipcode}
               </td>
               <td>
                 Lat: {user.address.geo.lat}, Lng: {user.address.geo.lng}
               </td>
               <td>{user.website}</td>
               <td>
-                {user.company.name}, {user.company.catchPhrase}, {user.company.bs}
+                {user.company.name}, {user.company.catchPhrase},{" "}
+                {user.company.bs}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>  
+    </div>
   );
 };
 

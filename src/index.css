@@ -1,89 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Nunito";
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  background-color: white;
-  color: black;
-  margin: 2rem;
-}
-
-header {
-  margin: 2rem 0;
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-header img {
-  width: 3rem;
-  object-fit: contain;
-}
-
-header h1 {
-  margin: 0;
-  color: #48d9f3;
-}
-
-header p {
-  margin: 0;
-  color: #82c2ce;
-}
-
-#tabs {
-  max-width: 32rem;
-  margin: 2rem 0;
-  overflow: hidden;
-}
-
-#tabs menu {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 0.25rem;
-}
-
-#tabs button {
-  font: inherit;
-  font-size: 0.85rem;
-  background-color: #282f33;
-  border: none;
-  border-bottom-color: #48d9f3;
-  color: #e0eff1;
-  border-radius: 4px 4px 0 0;
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease-out;
-}
-
-#tabs button:hover,
-#tabs button.active {
-  background-color: #48d9f3;
-  color: #273133;
-}
-
-#tab-content {
-  background-color: #2d3942;
-  border-radius: 0 4px 4px 4px;
-  padding: 1rem;
-}
-
-#tab-content li {
-  margin: 0.75rem 0;
-}
-
